@@ -8,13 +8,12 @@ const int MAX_BEDROOMS = 4;
 const int MAX_KITCHENS = 1;
 const int MAX_BATHROOMS = 2;
 const int MAX_LIVINGROOMS = 5;
-
+const int MAX_ROOMS = MAX_BEDROOMS+MAX_KITCHENS+MAX_BATHROOMS+MAX_LIVINGROOMS;
 //a house with less than the minimum number of rooms of each type will always be worth $0
 const int MIN_BEDROOMS = 1;
 const int MIN_KITCHENS = 1;
 const int MIN_BATHROOMS = 1;
 const int MIN_LIVINGROOMS = 0;
-
 //each room must be at least this high to be valid for adding to a house
 const int MIN_HEIGHT = 7;
 
@@ -23,8 +22,7 @@ const int MIN_AREA = 25;
 
 class House
 {
-public:
-	//constructor
+public:	//constructor
 	House();
 	//destructor
 	~House(){};
@@ -43,5 +41,7 @@ public:
 
 	string getDescription();
 private:
-	//add data here!!!
+	int getNumRoom(RoomType type);
+	Room rooms[MAX_ROOMS];
+	Room* roomIndex;
 };

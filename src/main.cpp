@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-	ifstream inFile( "HouseDriver.txt" );
+	ifstream inFile( "src/HouseDriver.txt" );
 
 	House theHouse;
 
